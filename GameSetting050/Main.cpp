@@ -17,6 +17,9 @@ void Main()
 	Ctrl_KeyConfig		ctrl_KeyConfig;
 	ctrl_KeyConfig.Load ();
 
+	//入力の監理
+	SivInput::Create ();
+
 	//========================================
 	//メインループ
 	bool init = F;
@@ -26,7 +29,6 @@ void Main()
 		//1回のみ初期化
 		if ( ! init ) { Init (); init = T; }
 
-#if 0
 		//入力の更新
 		SivInput::Inst()->Update ();
 
@@ -38,6 +40,7 @@ void Main()
 
 		//入力の保存
 		SivInput::Inst()->Store ();
+#if 0
 #endif // 0
 	}
 	//========================================
