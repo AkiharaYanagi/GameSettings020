@@ -127,7 +127,6 @@ namespace GAME
 
 	void Ctrl_KeyConfig::Move ()
 	{
-
 		//入力の取得
 		DeviceInput di = SivInput::Inst()->PushInput ();
 		INPUT_DEVICE_TYPE idt = di.GetType();
@@ -372,6 +371,10 @@ namespace GAME
 
 		switch ( pit )
 		{
+		case PIT_SDL_AXIS:
+			str += gpi.GetStrSDLAxis();
+		break;
+
 		case PIT_AXIS:
 			str += U"{}"_fmt ( gpi.GetStrAxis() );
 		break;
